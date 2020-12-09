@@ -1,2 +1,2 @@
-# Banking-JUnit-Testing
-Testing repository for JUnit excercises
+# Banking JUnit Testing
+Test repository for JUnit exercises.
