@@ -16,8 +16,14 @@ public class UtilitiesTest {
 
     @org.junit.Test
     public void removePairs() {
-//        fail("This test has not been implemented");
-        assertEquals("ABCDEF", "AABCDDEFF");
+        Utilities util = new Utilities();
+        assertEquals("ABCDEF", util.removePairs("AABCDDEFF"));
+
+        /*
+        * Test fails, although it's done write, needed to find out why "Actual: " is empty??
+        * */
+
+
     }
 
     @org.junit.Test
