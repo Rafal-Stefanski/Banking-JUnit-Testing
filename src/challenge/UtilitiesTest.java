@@ -1,9 +1,5 @@
 package challenge;
 
-//import org.junit.Test;
-
-//import static org.junit.Assert.*;
-
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.fail;
 
@@ -18,12 +14,7 @@ public class UtilitiesTest {
     public void removePairs() {
         Utilities util = new Utilities();
         assertEquals("ABCDEF", util.removePairs("AABCDDEFF"));
-
-        /*
-        * Test fails, although it's done write, needed to find out why "Actual: " is empty??
-        * */
-
-
+        assertEquals("ABCABDEF", util.removePairs("ABCCABDEEF"));
     }
 
     @org.junit.Test

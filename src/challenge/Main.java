@@ -3,6 +3,9 @@ package challenge;
 public class Main {
     public static void main(String[] args) {
         // here we go..
-        System.out.println("The application is running");
+        System.out.println("The application is running.");
+        Utilities util = new Utilities();
+        String output = util.removePairs("AABCDDEFF");
+        System.out.println("\nremoved pairs: " + output);
     }
 }
