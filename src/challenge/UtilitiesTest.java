@@ -1,16 +1,20 @@
 package challenge;
 
-import java.util.Arrays;
-
 import static junit.framework.TestCase.*;
 import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertNotEquals;
 
 public class UtilitiesTest {
 
+    private Utilities util;
+
+    @org.junit.Before
+    public void setup() {
+        util = new Utilities();
+    }
+
     @org.junit.Test
     public void everyNthChar() {
-        Utilities util = new Utilities();
+//        Utilities util = new Utilities();     // created in @org.junit.Before
         char[] output = util.everyNthChar(new char[]{'h', 'e', 'l', 'l', 'o'}, 2);
         assertArrayEquals(new char[]{'e', 'l'}, output);
         char[] output2 = util.everyNthChar(new char[]{'h', 'e', 'l', 'l', 'o'}, 8);
@@ -19,25 +23,26 @@ public class UtilitiesTest {
 
     @org.junit.Test
     public void removePairs() {
-        Utilities util = new Utilities();
         assertEquals("ABCDEF", util.removePairs("AABCDDEFF"));
         assertEquals("ABCABDEF", util.removePairs("ABCCABDEEF"));
         assertNull("Did not get null returned when argument passed was null.", util.removePairs(null));
         assertEquals("A", util.removePairs("A"));
         assertEquals("", util.removePairs(""));
-
-
     }
 
     @org.junit.Test
     public void converter() {
-        Utilities util = new Utilities();
         assertEquals(300, util.converter(10, 5));
+    }
+
+    @org.junit.Test(expected = ArithmeticException.class)
+    public void converter_arithmeticException() {
+        util.converter(10, 0);
+        fail("Divided by zero, that's an ArithmeticException.");  // - unneeded
     }
 
     @org.junit.Test
     public void nullIfOddLength() {
-        Utilities util = new Utilities();
         assertNull(util.nullIfOddLength("odd"));
         assertNotNull(util.nullIfOddLength("even"));
     }

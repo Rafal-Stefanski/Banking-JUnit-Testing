@@ -26,5 +26,11 @@ public class Main {
         System.out.println("\n=== challenge #7 ===");
         System.out.println(util.converter(10, 5));
 
+        // converter() method
+        System.out.println("\n=== challenge #8 ===");
+        System.out.println(util.converter(10, 0));
+
+        System.out.println("\n=== challenge #10 ===");
+
     }
 }
